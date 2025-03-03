@@ -17,7 +17,15 @@ namespace ProjectJwtAndIdentity.Controllers
             _userManager = userManager;
         }
 
+
         public IActionResult RoleList()
+        {
+            var values = _roleManager.Roles.ToList();
+            return View(values);
+        }
+
+        public IActionResult Index()
+
         {
             var values = _roleManager.Roles.ToList();
             return View(values);
@@ -32,6 +40,7 @@ namespace ProjectJwtAndIdentity.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateRole(CreateRoleViewModel model)
         {
+
             AppRole appRole = new AppRole()
             {
                 Name = model.RoleName
@@ -78,6 +87,7 @@ namespace ProjectJwtAndIdentity.Controllers
         [HttpPost]
         public async Task<IActionResult> AssignRole(List<RoleAssignViewModel> model)
         {
+            var userid = (int)TempData["x"];
             return View();
         }
     }
