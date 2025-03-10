@@ -14,10 +14,10 @@ namespace ProjectJwtAndIdentity.Controllers
         [HttpPost]
         public IActionResult Index(ResultAppUser resultAppUser)
         {
-
             var value = JwtTokenGenerator.GenerateToken(resultAppUser);
-            ViewBag.v = value;
+            ViewBag.v = value.Token;
             return View();
         }
+
     }
 }

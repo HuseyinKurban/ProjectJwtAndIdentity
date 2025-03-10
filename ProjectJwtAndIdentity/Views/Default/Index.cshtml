@@ -1,0 +1,26 @@
+﻿@model ResultAppUser
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <input type="text" class="form-control" asp-for="Name" placeholder="Adınız" />
+        <br />
+        <input type="text" class="form-control" asp-for="Surname" placeholder="Soyadınız" />
+        <br />
+        <input type="text" class="form-control" asp-for="Id" placeholder="Id Bilgisi" />
+        <br />
+        <input type="text" class="form-control" asp-for="Username" placeholder="Kullanıcı Adınız" />
+        <br />
+        <input type="text" class="form-control" asp-for="City" placeholder="Şehir" />
+        <br />
+        <input type="text" class="form-control" asp-for="Email" placeholder="Email Adresi" />
+        <br />
+        <button class="btn btn-info">Token Oluştur</button>
+        <h3>@ViewBag.v</h3>
+    </form>
+</div>
